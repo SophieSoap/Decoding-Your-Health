@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<link rel="icon" type="image/png" href="../img/favicon.png">
+	<title>Decoding Your Health</title>
+	<meta name="description" content="Understanding The Quantified Self Through Samsung Health"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../css/style.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+        <a href="/index.html#home" class="header">Decoding Your Health</a>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/pages/about.html">About the Project</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="/index.html#indroduction">Introduction</a></li>
+                <li><a href="/index/#self-tracking">The Rise of Self-Tracking</a></li>
+                <li><a href="/index/#quantified-self">The Quantified Self</a></li>
+				<li><a href="/pages/evaluation.html">Evaluating Samsung Health</a></li>
+				<li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+    </header>
+
+	<main>
+		<!-- Conclusion -->
+		<section id="conclusion"></section>
+		<section id="intro-scrolly">
+			<article id="intro-article">
+				<h3>Conclusion</h3>
+				<div class="intro-step" data-step="1">
+					<p>The Samsung Health App showcases the potential of self-tracking technologies through its user-centric design, motivational features and intuitive visualisations, it <span class="green-text">empowers individuals</span> to monitor and improve their health in ways that were unimaginable just a decade ago. However, this potential comes with significant trade-offs that merit critical reflection.</p>
+				</div>
+				<div class="intro-step" data-step="2">
+					<p>While Samsung Health and many other health apps appear free to use, they often come at the cost of user data which can be <span class="pink-text">analysed, monetised, and shared with third parties</span>, such as advertisers, insurers, or other institutions. The promise of better health and personalised insights often involves the commodification of personal health data.</p>
+				</div>
+				<div class="intro-step" data-step="3">
+					<p>Beyond data concerns, the focus on metrics can foster obsession, undermine intuition, and encourage unhealthy behaviours, promoting a reductive view of health disconnected from personal experience.</p>
+				</div>
+				<div class="intro-step" data-step="4">
+					<p>While self-tracking can undoubtedly empower individuals to take control of their health, it also raises an essential question: <span class="green-text">Who truly benefits?</span> Are these tools genuinely designed for the user’s well-being, or do they primarily serve capitalistic corporate interests?</p>
+				</div>
+				<div class="intro-step" data-step="5">
+					<p>As we embrace the tools of the <span class="green-text">Quantified Self movement</span>, it is vital to critically evaluate their broader implications. <span class="green-text">At what cost do we quantify the self?</span></p>
+				</div>
+			</article>
+		</section>
+
+		<section id="outro"></section>
+
+		<footer>
+			<p class="footer-copyright">Copytight © 2025 Decoding Your Health</p>
+		</footer>
+	</main>
+
+	<!-- Hamburger Menu -->
+	<script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mobile-menu').classList.toggle('active');
+        });
+    </script>
+
+	<!-- <div class='debug'></div> -->
+	<script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+	<script src="../js/scrollama.min.js"></script>
+
+	<!-- scrollama basic -->
+	<script>
+		var scrolly = document.querySelector("#intro-scrolly");
+		var article = scrolly.querySelector("#intro-article");
+		var steps = article.querySelectorAll(".intro-step");
+
+		var scroller = scrollama();
+
+		function handleStepEnter(response) {
+			response.element.classList.add("is-active");
+		}
+		function handleStepExit(response) {
+			response.element.classList.remove("is-active");
+		}
+		function init() {
+			steps.forEach(function (step) {
+    		step.style.padding = "5px 0px"; // Weniger vertikaler Abstand
+			});
+			scroller
+				.setup({
+					step: "#intro-scrolly #intro-article .intro-step",
+					debug: false,
+					offset: 0.5
+				})
+				.onStepEnter(handleStepEnter)
+				.onStepExit(handleStepExit);
+		}
+		init();
+	</script>
+
+	<!-- scrollama sticky side -->
+	<script>
+		// using d3 for convenience
+		var main = d3.select("main");
+		var scrolly = main.select("#scrolly");
+		var figure = scrolly.select("figure");
+		var article = scrolly.select("article");
+		var step = article.selectAll(".step");
+
+		// initialize the scrollama
+		var scroller = scrollama();
+
+		// generic window resize listener event
+		function handleResize() {
+		// 1. update height of step elements
+		var stepH = Math.floor(window.innerHeight * 0.75);
+		step.style("height", stepH + "px");
+
+		var figureHeight = window.innerHeight / 1.25;
+		var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+
+		figure
+			.style("height", figureHeight + "px")
+			.style("top", figureMarginTop + "px");
+
+		// 3. tell scrollama to update new element dimensions
+		scroller.resize();
+		}
+
+		// Medien (Bilder & Videos)
+		var media = [
+		{type: "video", src: "img/1.mp4"},
+		{type: "image", src: "img/2.png"},
+		{type: "image", src: "img/3.png"},
+		{type: "image", src: "img/4.png"},
+		{type: "video", src: "img/5.mp4"},
+		{type: "video", src: "img/6.mp4"},
+		{type: "video", src: "img/7.mp4"},
+		{type: "video", src: "img/8.mp4"},
+		];
+		
+		function updateMedia(index) {
+			var mediaContainer = document.getElementById("media-container");
+			mediaContainer.innerHTML = ""; // Vorherige Medien löschen
+
+			var mediaElement;
+			if (media[index].type === "image") {
+				mediaElement = document.createElement("img");
+				mediaElement.src = media[index].src;
+			} else if (media[index].type === "video") {
+				mediaElement = document.createElement("video");
+				mediaElement.src = media[index].src;
+				mediaElement.autoplay = true; // Startet automatisch
+				mediaElement.muted = true; // Stumm geschaltet für automatische Wiedergabe
+				mediaElement.playsInline = true; // Verhindert Vollbildmodus auf mobilen Geräten
+				mediaElement.style.pointerEvents = "none"; // Deaktiviert Interaktionen
+			}
+
+			// Größe anpassen
+			mediaElement.style.width = "100%";
+			mediaElement.style.height = "auto";
+			mediaContainer.appendChild(mediaElement);
+		}
+
+		// scrollama event handlers
+		function handleStepEnter(response) {
+		console.log("Step:", response.index);
+
+		// Aktuellen Step markieren
+		step.classed("is-active", function (d, i) {
+			return i === response.index;
+		});
+
+		// Medien wechseln
+		updateMedia(response.index);
+		}
+
+		// Initialisierung
+		function init() {
+		handleResize(); // Resize beim Start
+
+		// Scrollama einrichten
+		scroller
+			.setup({
+			step: "#scrolly article .step",
+			offset: 0.4,
+			debug: false
+			})
+			.onStepEnter(handleStepEnter);
+		}
+
+		// EventListener für Resize
+		window.addEventListener("resize", handleResize);
+
+		// Start
+		init();
+	</script>
+
+	 <!-- Warning Overlay -->
+	 <script>
+        // Funktion zur Überprüfung der Bildschirmgröße
+        function checkScreenSize() {
+            // Wenn die Bildschirmbreite kleiner als 768px ist (also auf mobilen Geräten)
+            if (window.innerWidth < 768) {
+                document.getElementById('warningOverlay').style.display = 'flex'; // Zeige das Overlay an
+                document.body.style.display = 'none'; // Verstecke den normalen Inhalt
+            } else {
+                document.getElementById('warningOverlay').style.display = 'none'; // Verstecke das Overlay
+                document.body.style.display = 'block'; // Zeige den normalen Inhalt an
+            }
+        }
+
+        // Überprüfe beim Laden der Seite und bei jeder Änderung der Fenstergröße
+        window.onload = checkScreenSize;
+        window.onresize = checkScreenSize;
+    </script>
+</body>
+</html>

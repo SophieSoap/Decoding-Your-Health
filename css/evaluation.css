@@ -1,0 +1,238 @@
+:root {
+  --bg-color: #F1F1F3;
+  --text-color: #171719;
+  --section-color: #FCFCFE;
+  --highlight-color: #03A051;
+  --highlight-pink: #FF4B96;
+  --font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+  overflow-x: hidden;
+  min-height: 1280px;
+}
+
+::selection {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: var(--bg-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.header {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+.header:hover {
+  color: var(--highlight-color);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 20px;
+}
+.nav-links li {
+  list-style-type: none;
+}
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 10px;
+}
+.nav-links a:hover {
+  color: var(--highlight-color);
+}
+.menu-toggle {
+  cursor: pointer;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.bar {
+  background: var(--text-color);
+  height: 3px;
+  width: 30px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: var(--bg-color);
+  border-left: 1px solid var(--highlight-color);
+  padding: 20px;
+}
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.mobile-menu li {
+  margin: 15px 0;
+}
+.mobile-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.mobile-menu.active {
+  display: block;
+}
+
+#scrolly {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 5rem;
+}
+#scrolly>* {
+  -webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+figure {
+	display: flex;
+	justify-content: center; /* Horizontale Zentrierung */
+	align-items: center; /* Vertikale Zentrierung */
+	position: sticky;
+	width: 100%;
+	height: 80vh; /* Höhe auf die Hälfte des Viewports setzen */
+	margin: 0;
+}
+figure img {
+	max-height: 100%; /* Bildhöhe auf die maximale Höhe des figure-Containers begrenzen */
+	width: auto; /* Automatische Breite, um das Seitenverhältnis beizubehalten */
+	object-fit: contain; /* Sicherstellen, dass das gesamte Bild sichtbar bleibt */
+}
+article {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* Vertikal zentrieren */
+	align-items: center; /* Horizontal zentrieren */
+	text-align: left; /* Textausrichtung */
+	max-width: 40rem; /* Begrenzung der Breite */
+	margin: 0 auto; /* Zentrieren des Artikels */
+}
+.step {
+	margin: 2rem auto;
+	padding: 2rem;
+}
+.text-box {
+	background-color: var(--section-color);
+	padding: 1rem;
+	border-radius: 25px;
+	max-width: 100%;
+}
+.step:last-child {
+	margin-bottom: 0;
+}
+.step p {
+	padding: 3rem;
+}
+
+.green-text {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+.pink-text {
+  color: var(--highlight-pink);
+  font-weight: bold;
+}
+
+/* Styling Step 1 */
+.step[data-step="1"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikale Zentrierung */
+  align-items: center; /* Horizontale Zentrierung */
+  height: 100vh; /* Volle Höhe des Viewports */
+  text-align: center; /* Textzentrierung */
+}
+
+/* Zentrierung der Texte im Step 1 */
+.step[data-step="1"] h2,
+.step[data-step="1"] h1 {
+  margin: 0;
+}
+
+/* Styling für die Überschrift (h2) im Step 1 */
+.step[data-step="1"] h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  font-weight: bolder;
+  margin-bottom: 1rem; /* Abstand unter h2 */
+}
+
+/* Styling für die Überschrift (h1) im Step 1 */
+.step[data-step="1"] h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--highlight-color);
+}
+
+.exit-button {
+  display: block;
+  margin: 20px auto; /* Zentriert den Button unter dem Text */
+  padding: 20px 30px;
+  border: 2px solid var(--highlight-color);
+  background: none;
+  color: var(--highlight-color);
+  border-radius: 8px;
+  font-size: 1.0em;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Hover-Effekt */
+.exit-button:hover {
+  background: var(--highlight-color);
+  color: var(--bg-color);
+}
+
+/* Klick-Effekt */
+.exit-button:active {
+  background: var(--highlight-color);
+  color: var(--bg-color);
+  transform: scale(1.2); /* Kleiner Klick-Effekt */
+}

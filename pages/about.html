@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<link rel="icon" type="image/png" href="../img/favicon.png">
+	<title>Decoding Your Health</title>
+	<meta name="description" content="Understanding The Quantified Self Through Samsung Health"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../css/style.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+        <a href="/index.html#home" class="header">Decoding Your Health</a>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About the Project</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="/index.html#indroduction">Introduction</a></li>
+                <li><a href="/index/#self-tracking">The Rise of Self-Tracking</a></li>
+                <li><a href="/index/#quantified-self">The Quantified Self</a></li>
+				<li><a href="/pages/evaluation.html">Evaluating Samsung Health</a></li>
+				<li><a href="/pages/conclusion.html">Conclusion</a></li>
+            </ul>
+        </div>
+    </header>
+
+	<main>
+		<!-- about -->
+		<section id="about">
+			<h2>About the Project</h2>
+			<p>This website was created as part of the course <em>Deconstructing User Interfaces</em>, led by Francesca Morini, during the winter semester 2024/25 at the University of Applied Sciences Potsdam. Our project critically explored and investigated deceptive patterns in UX/UI design, specifically how user interfaces can subtly shape and influence the user’s decisions and behaviours.</p>
+			<p>Focusing on the Samsung Health app, we examined its extensive usage of data visualisation and how those impact the user’s perception of their own personal health. We specifically chose Samsung Health due to its strong reliance on infographics and because two team members were already familiar with the app, which provided a solid foundation for our analysis.</p>
+			<p>Our central research question asked:</p>
+
+			<p><span class="green-text">How does the Samsung Health app visualise the vast amount of data it collects to make it more understandable for users?</span></p>
+		
+			<p>This led us to explore the concept of the <em>“Quantified Self”</em>, analysing how personal data is tracked, measured, and presented to influence behaviour.</p>
+			<p>Health tracking apps do more than collect data; they shape how users interpret their health progress. Through our deconstruction of Samsung Health’s interface, we questioned whether its visual design fosters transparency or obscures the true extent of data collection. Does the app present information in a neutral way, or does it employ selective design elements to nudge users in specific directions?</p>
+			<p>In an era of growing concerns over data privacy and digital influence, we want to shed light on the impact of user interfaces in shaping perceptions and decisions with our project.</p>
+		</section>
+
+		<section id="sources">
+			<h2>Sources</h2>
+			<p>
+				1. <a href="https://acagroup.be/en/blog/boost-your-app-s-usability-with-home-screen-widgets/" target="_blank">ACA Group. (n.d.). Boost your app’s usability with home screen widgets.</a><br>
+				2. <a href="https://www.uclahealth.org/news/article/are-fitness-trackers-enough-to-keep-you-motivated-and-turn-exercise-into-a-habit" target="_blank">UCLA Health. (n.d.). Are fitness trackers enough to keep you motivated and turn exercise into a habit?</a><br>
+				3. <a href="https://www.brownhealth.org/be-well/how-fitness-trackers-can-help-you-manage-your-health" target="_blank">Brown Health. (n.d.). How fitness trackers can help you manage your health.</a><br>
+				4. <a href="https://www.outsideonline.com/health/training-performance/why-some-people-shouldnt-use-fitness-trackers-according-to-experts" target="_blank">Outside Online. (n.d.). Why some people shouldn’t use fitness trackers, according to experts.</a><br>
+				5. <a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9781315108285-2" target="_blank">Smith, G., & Vonthethoff, B. (n.d.). Health by numbers: Exploring the practice and experience of datafied health. In The Quantified Self Movement.</a><br>
+				6. <a href="https://www.jmir.org/2021/9/e25171/" target="_blank">Journal of Medical Internet Research. (2021). Impact of fitness trackers on health awareness and engagement.</a><br>
+				7. <a href="https://dareewrites.com/the-psychology-of-fitness-tracking-motivation-or-obsession-balancing-data-and-well-being/" target="_blank">Daree Writes. (n.d.). The psychology of fitness tracking: Motivation or obsession? Balancing data and well-being.</a><br>
+				8. <a href="https://www.tandfonline.com/doi/full/10.1080/2159676X.2019.1617188" target="_blank">International Journal of Sport and Exercise Psychology. (2019). Study on fitness tracking and behavioral influence.</a><br>
+				9. <a href="https://news.samsung.com/global/editorial-solving-the-digital-health-dilemma-samsungs-vision-for-an-intelligent-health-platform" target="_blank">Samsung Newsroom. (n.d.). Solving the digital health dilemma: Samsung’s vision for an intelligent health platform.</a><br>
+				10. <a href="https://www.annualreviews.org/content/journals/10.1146/annurev" target="_blank">Annual Review of Public Health. (2020). Digital health interventions: Trends, benefits, and challenges.</a><br>
+				11. <a href="https://ceur-ws.org/Vol-3405/paper10.pdf" target="_blank">CEUR Workshop Proceedings. (n.d.). Digital self-tracking and its societal impact.</a><br>
+			</p>
+		</section>
+		
+
+		<section id="credits">
+			<h2>Credits</h2>
+			<p>Natalie Ille</p>
+			<p>Kim Tuyen Truong</p>
+			<p>Sophie Seifert</p>
+		</section>
+
+		<section id="outro"></section>
+
+		<footer>
+			<p class="footer-copyright">Copytight © 2025 Decoding Your Health</p>
+		</footer>
+	</main>
+
+	<!-- Hamburger Menu -->
+	<script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mobile-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
