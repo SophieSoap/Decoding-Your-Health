@@ -271,6 +271,7 @@ padding: 3rem;
   cursor: pointer;
   text-align: center;
   transition: all 0.5s ease-in-out;
+  text-decoration: none;
 }
 
 /* Hover-Effekt */
